@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Certificate Application</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px auto 0; /* Added margin-top for spacing */
+        }
+        h2 {
+            text-align: center;
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+        label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input[type="text"], input[type="date"], select, input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+        input[type="radio"] {
+            width: auto;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 48%;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.download {
+            background-color: #28a745;
+        }
+        .button.download:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Death Certificate Application</h2>
+        <form id="death-certificate-form">
+            <fieldset>
+                <legend>Deceased Details</legend>
+                <label for="deceased-name">Deceased Name:</label>
+                <input type="text" id="deceased-name" name="deceased_name" required>
+
+                <label for="date-of-death">Date of Death:</label>
+                <input type="date" id="date-of-death" name="date_of_death" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="care-of">Care of:</label>
+                <input type="radio" id="father" name="care_of" value="father">
+                <label for="father" style="display: inline;">Father</label>
+                <input type="radio" id="husband" name="care_of" value="husband">
+                <label for="husband" style="display: inline;">Husband</label>
+
+                <label for="father-husband-name">Father/Husband Name:</label>
+                <input type="text" id="father-husband-name" name="father_husband_name">
+
+                <label for="address-line">Permanent Address:</label>
+                <input type="text" id="address-line" name="address_line">
+            </fieldset>
+
+            <fieldset>
+                <legend>Informant Details</legend>
+                <label for="informant-name">Informant Name:</label>
+                <input type="text" id="informant-name" name="informant_name" required>
+
+                <label for="relation-with-deceased">Relation with Deceased:</label>
+                <input type="text" id="relation-with-deceased" name="relation_with_deceased">
+            </fieldset>
+
+            <div class="buttons">
+                <button type="button" id="generate-certificate" class="button">Generate Certificate</button>
+                <button type="button" id="download-certificate" class="button download">Download Certificate</button>
+            </div>
+        </form>
+    </div>
+    <script src="deathCertificate.js"></script>
+</body>
+</html>
